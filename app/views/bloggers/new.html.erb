@@ -1,0 +1,16 @@
+<h1> Create a Blogger </h1>
+
+<% if @errors %>
+  <% @errors.each do |e| %>
+    <h2><%= e %> </h2>
+  <% end  %>
+<% end  %>
+<%= form_for @blogger do |f| %>
+    <p><label> Name:
+    <%= f.text_field :name %></label></p><br>
+    <p><label> Bio:
+    <%= f.text_area :bio %></label></p><br>
+    <p><label> Age:
+    <%= f.text_field :age %></label></p><br>
+    <%= f.submit "Create" %>
+  <% end %>
