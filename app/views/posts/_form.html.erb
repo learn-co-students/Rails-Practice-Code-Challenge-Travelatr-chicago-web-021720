@@ -1,0 +1,25 @@
+<ul>
+<% post.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+<% end %>
+</ul>
+
+<%= form_for post do |f| %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %><br>
+
+    <%= f.label :blogger_id %>
+    <%= f.collection_select :blogger_id, bloggers, :id, :name, prompt: true  %><br>
+
+    <%= f.label :destination_id %>
+    <%= f.collection_select :destination_id, destinations, :id, :to_s, prompt: true %><br>
+
+    <%= f.label :content %>
+    <%= f.text_area :content %><br><br>
+
+    <%= f.hidden_field :likes, 0 %>
+
+    <%= f.submit %>
+
+<% end %>
