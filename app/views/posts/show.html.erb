@@ -1,0 +1,11 @@
+<h2>Post</h2>
+
+<p>Title: <%= @post.title %></p>
+<p>Blogger: <%= link_to @post.blogger.name, blogger_path(@post.blogger) %></p>
+<p>Destination: <%= link_to @post.destination.to_s, destination_path(@post.destination) %></p>
+<p>Content: <%= @post.content %></p>
+<p>Likes: <%= @post.likes %></p>
+
+<%= button_to "Like Post", post_path(@post), method: :patch, params: {post: { likes: @post.likes + 1 }}  %>
+
+<br>
