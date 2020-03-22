@@ -1,0 +1,12 @@
+<h1>All the Posts</h1>
+<br>
+<br>
+<%= @posts.each do |b| %>
+  <%= b.title %>
+  <br>
+  <br>
+  <%= b.content %>
+  <br>
+  <br>
+  <%= link_to b.title, post_path(b) %>
+<% end %>

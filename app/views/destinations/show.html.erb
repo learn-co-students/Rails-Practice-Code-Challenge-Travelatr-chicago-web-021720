@@ -7,3 +7,18 @@
 <br>
 <h1>Country Name</h1>
 <p><%= @destination.country %></p>
+<br>
+<br>
+<br>
+<h1>5 most recent posts</h1>
+<%=@first_five.each do |f|  %>
+<%= f.title %>
+<% end %>
+<br>
+<br>
+<h1>Featured Post</h1>
+<%= @most_liked.title %>
+<br>
+<br>
+<h1>The average age of the bloggers is</h1>
+<%= @average_age %>

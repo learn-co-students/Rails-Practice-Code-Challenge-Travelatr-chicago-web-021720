@@ -1,8 +1,13 @@
 class PostsController < ApplicationController
+
+  def index
+    @posts = Post.all
+  end
   def new
     @post = Post.new
     get_alls
   end
+
   def create
     newpost = Post.new(post_params)
     if newpost.valid?
