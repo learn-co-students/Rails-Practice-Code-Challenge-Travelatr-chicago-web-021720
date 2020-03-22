@@ -1,0 +1,18 @@
+<%= @blogger.posts.to_a %>
+
+
+<% @totalikes = @blogger.posts.to_a.reduce(0) do |sum, post| %>
+  <% sum + post.likes %>
+  <% end %>
+<% @featured_post = @blogger.posts.to_a.max_by do |post| %>
+  <% post.likes %>
+  <% end %>
+
+  <h1>Total Likes:</h1>
+  <%= @totalikes %>
+
+  <h1>Featured Post</h1>
+  <%= link_to @featured_post.title, post_path(@featured_post) %>
+
+  <h1>Top 5 destinations</h1>
+  
