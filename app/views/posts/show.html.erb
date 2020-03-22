@@ -1,0 +1,23 @@
+<h1>Your post</h1>
+<br>
+<br>
+<p>Title:</p>
+<%=@post.title%>
+<br>
+<br>
+<p>Description:</p>
+<%=@post.content%>
+
+<%=form_for @post do |f| %>
+<br>
+<%=link_to "posts author",@post.blogger %>
+<br>
+<br>
+<%=link_to "posts destination",@post.destination %>
+<br>
+<br>
+<p>Like it here</p>
+<button>Like this post</button>
+<%=f.submit%>
+
+<% end %>
